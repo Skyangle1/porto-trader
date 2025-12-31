@@ -1,0 +1,139 @@
+/* Base Setup */
+body {
+    background-color: #050a14;
+    color: #cbd5e1;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #050a14; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+/* Glassmorphism Classes */
+.glass {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.glass-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.4s ease;
+}
+.glass-card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+}
+
+/* Text Effects */
+.text-glow { text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+
+/* 3D Animation Utilities */
+.perspective-container { perspective: 1000px; }
+.card-3d { 
+    transform-style: preserve-3d; 
+    transition: transform 0.5s ease;
+}
+.perspective-container:hover .card-3d {
+    transform: rotateY(5deg) rotateX(2deg);
+}
+
+/* Background Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, -20px); }
+}
+.blob { animation: float 10s ease-in-out infinite; }
+
+/* Tab Button Styles */
+.tab-btn {
+    width: 100%;
+    text-align: left;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.875rem;
+    color: #94a3b8;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tab-btn:hover { background-color: #1e293b; color: white; }
+.tab-btn i { opacity: 0; transition: opacity 0.3s; }
+.tab-btn.active i { opacity: 1; }
+
+.tab-btn.active {
+    background: linear-gradient(90deg, rgba(212,175,55,0.1) 0%, transparent 100%);
+    border-left: 3px solid #D4AF37;
+    color: #D4AF37;
+}
+
+/* Empty Slot Dashed Style */
+.slot-empty {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23334155FF' stroke-width='2' stroke-dasharray='10%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    transition: all 0.3s;
+}
+.slot-empty:hover {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23D4AF37' stroke-width='2' stroke-dasharray='10%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    background-color: rgba(212,175,55,0.05);
+}
+/* --- LOADING SCREEN STYLES (Paste di paling bawah) --- */
+
+#loader {
+    /* Efek transisi 'Tirai' naik ke atas */
+    /* Menggunakan cubic-bezier agar gerakannya cepat di awal lalu melambat elegan */
+    transition: transform 1.0s cubic-bezier(0.8, 0, 0.1, 1);
+}
+
+/* Efek Glow khusus untuk Logo saat Loading */
+#loader h1 {
+    text-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+}
+/* Custom Cursor (Hanya aktif di Desktop karena HP gapunya mouse) */
+.cursor-dot, .cursor-outline {
+    transform: translate(-50%, -50%); /* Biar titiknya pas di tengah mouse */
+}
+/* --- BRAND EVOLUTION STYLING --- */
+.brand-history {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Mencegah tabrakan di layar kecil */
+}
+
+.evolution-note {
+    font-family: 'JetBrains Mono', monospace; /* Kesan teknis/institusional */
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 5px 15px;
+    border-radius: 50px;
+    border: 1px dashed rgba(0, 242, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+}
+
+.evolution-note small {
+    opacity: 0.6;
+    font-weight: 400;
+}
+
+.evolution-note i {
+    color: var(--cyan);
+}
+
+/* Memastikan judul utama tetap rapi di bawahnya */
+h1 {
+    margin-top: 5px;
+    font-size: 3.8rem; /* Ukuran yang lebih proporsional */
+}
