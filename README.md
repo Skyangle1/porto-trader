@@ -24,8 +24,3 @@ This portfolio is built using modern web technologies to ensure a premium user e
 - **3D Parallax Hero:** Interactive profile frame with perspective tilt.
 - **Live Execution Journal:** Integrated analysis feed (Mockup).
 - **Responsive Terminal Design:** Optimized for both desktop and mobile trading environments.
-
-## 🔗 Connect With Me
-Feel free to reach out for collaboration or institutional analysis inquiries:
-- **Telegram:** [Join FARS TRADE](https://t.me/your_telegram_link)
-- **TradingView:** [View My Charts](https://www.tradingview.com/u/your_username/)
